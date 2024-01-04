@@ -3,19 +3,18 @@
 In this task, we will create a multisig address and simulate to spend this fund.
 
 ## Project structure
-
+```
 ├── lab02_config
 │   ├── task02_config
 │   │   ├── task02_pr1
 │   │   ├── task02_pr2
 │   │   ├── task02_pr3
 ├── libeay32.dll
-├── main\.py
-├── setup\.py
-├── utils\.py
-├── README\.md
-└── .gitignore
-
+├── main.py
+├── setup.py
+├── utils.py
+└── README.md
+```
 Our main works are conducted on `main.py`, detail about the generated private key is stored in `lib02_config/task02_config`. We write support functions in `utils.py`, and `setup.py` stored generate key functions, create multisig and simulate spend fund.
 
 ## Prerequisite
@@ -42,17 +41,17 @@ Firstly, the program turn generate or load the saved private keys in `lab02_conf
 
 Next, we generate the multisig address for 2 of pre-defined private keys, then we send bitcoin to this address on testnet in [btc-testnet]( https://coinfaucet.eu/en/btc-testnet/) as bellow.
 
-![Figure 1: Send bitcoin to multisig address on btc-testnet.](/images/send_bitcoin_to_multisig_address.png)
+![Figure 1: Send bitcoin to multisig address on btc-testnet.](images/send_bitcoin_to_multisig_address.png)
 
 Then, we checkout the multisig address and initialize transaction at [block-cypher](https://live.blockcypher.com/btc-testnet/) to confirm that we have received bitcoin from btc-testnet and obtain the transaction id for spend this fund.
 
-![Figure 2: Check multisig address.](/images/check_multisig_address.png)
+![Figure 2: Check multisig address.](images/check_multisig_address.png)
 
-![Figure 3: Check initialize transaction.](/images/check_init_transaction.png)
+![Figure 3: Check initialize transaction.](images/check_init_transaction.png)
 
 After that, we create a signed multisig transaction, then broadcast that transaction into btc-testnet using api from block-cypher.
 
-![Figure 3: Check initialize transaction.](/images/spend_this_fund.png)
+![Figure 3: Check initialize transaction.](images/spend_this_fund.png)
 
 Auxiliary part: here is our serialize values of created transaction. However, you could also verify it at this [link](https://live.blockcypher.com/btc-testnet/tx/66c5cc9cef51e027fd3902bc8b1c3b56c988822c4b25753cc2de3410e2c4c580/)
 ```
